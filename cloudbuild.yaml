@@ -7,21 +7,9 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/notes-app-back-end']
 
-  # Step 3: Deploy the Docker image to Google Cloud Run
+  # Step 3: Deploy the Docker image to Google Cloud Run (Optional)
   - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-      - 'run'
-      - 'deploy'
-      - 'notes-app-back-end'
-      - '--image'
-      - 'gcr.io/$PROJECT_ID/notes-app-back-end'
-      - '--platform'
-      - 'managed'
-      - '--region'
-      - 'us-central1'
-      - '--allow-unauthenticated'
-      - '--port'
-      - '3000'
+    args: ['run', 'deploy', 'notes-app-back-end', '--image', 'gcr.io/$PROJECT_ID/notes-app-back-end', '--platform', 'managed', '--region', 'us-central1', '--allow-unauthenticated']
 
 images:
   - 'gcr.io/$PROJECT_ID/notes-app-back-end'
