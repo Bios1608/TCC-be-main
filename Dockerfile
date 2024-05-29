@@ -5,7 +5,7 @@ FROM node:14
 WORKDIR /app
 
 # Copy package.json to the working directory
-COPY package.json /app/
+COPY package.json ./
 
 # Install dependencies
 RUN npm install --only=production
@@ -14,7 +14,7 @@ RUN npm install --only=production
 COPY . .
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 8080
 
 # Command to run the app
 CMD ["npm", "start"]
