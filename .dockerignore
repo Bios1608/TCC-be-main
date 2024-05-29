@@ -1,0 +1,15 @@
+# Ignore node_modules directory
+node_modules
+
+# Ignore Dockerfile and cloudbuild.yaml
+Dockerfile
+cloudbuild.yaml
+
+# Ignore any other build context files that are not required in the Docker image
+# For example, editor configuration files, temporary files, etc.
+.editorconfig
+.eslintignore
+.git
+.gitignore
+.vscode
+npm-debug.log
